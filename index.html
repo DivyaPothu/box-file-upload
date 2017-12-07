@@ -5,46 +5,43 @@
     <title>Box Content Uploader Demo</title>
 
     <!-- polyfill.io only loads the polyfills your browser needs -->
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Intl"></script>
+   <!--  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Intl"></script> -->
 
     <!-- Latest version of the uploader css for your locale -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" src="styles.css" />
+    <style>
+        body{ margin-top:30px; 
+            margin-left: 100px;}
+    </style>
+    
 </head>
-<body>
+<body ng-app ="myApp">
    <!--  <div class="container" style="height:600px"> -->
  file upload sample
 
-    <script src="https://cdn01.boxcdn.net/platform/elements/1.6.1/en-US/uploader.js"></script>
-    <script>
-      	
-//         const ACCESS_TOKEN = 'U1YoRF53I9d7FLymE8mdfPsbfJPS4Um2';
-// const FOLDER_ID = '0';
-
-// const uploader = new Box.ContentUploader();
-
-// // Show the content uploader
-// uploader.show(FOLDER_ID, ACCESS_TOKEN);
-
-// // Log upload data to console
-// uploader.on('complete', (data) => { 
-//     console.log(`All files successfully uploaded: ${JSON.stringify(data)}`); 
-// });
-
-// uploader.on('upload', (data) => {
-//     console.log(`Successfully uploaded file with name "${data.name}" to Box File ID ${data.id}`);
-// });
-
-// uploader.on('error', (data) => {
-//     console.log(`Error uploading file with name "${data.file.name}". The error was: "${data.error}"`);
-// });
-</script>
-<div class="id">
-    <form method="post" action="/upload" enctype="multipart/form-data">
-    <input type="file" name="file">
-    <button type="submit" class="btn btn-lg btn-success">Upload</button>
-</div>
+   <br></br>
+    <form  method="post" action="/upload" ng-controller="uploadController" enctype="multipart/form-data">
+    <input type="file" name="theFile">
+    <br></br>
+    <button type="submit" class="btn btn-lg btn-success" id="submit" value="Upload">Upload</button>
 </form>
+
+
+       <!--    <script src="https://cdn01.boxcdn.net/platform/elements/1.6.1/en-US/uploader.js"></script> -->
+          <script src="bower_components/angular/angular.min.js"></script>
+          <script src="bower_components/angular-route/angular-route.min.js"></script>
+          <script src="bower_components/jquery/dist/jquery.min.js"></script>
+          <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+          <link href="https://rawgithub.com/hayageek/jquery-upload-file/master/css/uploadfile.css" rel="stylesheet">
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+          <script src="https://rawgithub.com/hayageek/jquery-upload-file/master/js/jquery.uploadfile.min.js"></script>
+         <!--  <script src="upload.js"></script> -->
+       
 </body>
 
 </html>
+
+
+
 
